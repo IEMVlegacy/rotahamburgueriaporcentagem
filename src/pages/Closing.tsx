@@ -48,19 +48,19 @@ const Closing: React.FC = () => {
         employeeId: emp.id,
         employeeName: emp.name,
         employeeRole: emp.role,
-        daysWorked: days,
+        daysPresent: days > 0 ? 1 : 0,
+        daysAbsent: days === 0 ? 1 : 0,
         paymentAmount: days * valuePerDay
       };
-    }).filter(p => p.daysWorked > 0);
+    }).filter(p => p.daysPresent > 0 || p.daysAbsent > 0);
 
     addClosingRecord({
-      date: Date.now(),
-      revenue,
-      percentage,
+      closedAt: Date.now(),
+      monthLabel: `Fechamento ${new Date().toLocaleDateString('pt-BR')}`,
+      totalRevenue: revenue,
       total10Percent,
-      totalDaysWorked,
-      valuePerDay,
-      payments
+      payments,
+      dailyRecords: []
     });
 
     navigate('/history');

@@ -4,7 +4,7 @@ import { useAppContext } from '../context/AppContext';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { Table } from '../components/Table';
-import { CalendarCheck, Save } from 'lucide-react';
+import { CalendarCheck } from 'lucide-react';
 import type { EmployeePayment } from '../types';
 
 const MonthClosing: React.FC = () => {

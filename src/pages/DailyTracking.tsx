@@ -4,7 +4,7 @@ import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { Table } from '../components/Table';
 import { Calendar as CalendarIcon, Save, CheckCircle2, XCircle } from 'lucide-react';
-import { format, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 import type { Employee } from '../types';
 
 const DailyTracking: React.FC = () => {
